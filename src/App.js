@@ -7,7 +7,7 @@ import Login from "./components/Login";
 import Recherche from "./components/Recherche";
 import { MantineProvider } from "@mantine/core";
 import Sections from "./components/Sections";
-import Science from "./components/Science";
+import Science from "./components/Matiere/Science";
 import Mathématiques from "./components/Matiere/Mathématiques";
 import Technique from "./components/Matiere/Technique";
 import Economie_gestion from "./components/Matiere/Economie_gestion";

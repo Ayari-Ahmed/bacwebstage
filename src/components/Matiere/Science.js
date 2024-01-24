@@ -1,6 +1,6 @@
 import React from "react";
-import Logo1 from "../assets/logo1.png";
-import Logo2 from "../assets/logo2.png";
+import Logo1 from "./logos/logo1.png";
+import Logo2 from "./logos/logo2.png";
 import { Grid } from "@mantine/core";
 
 function Science() {
