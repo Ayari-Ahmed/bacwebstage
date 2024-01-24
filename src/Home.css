@@ -107,11 +107,21 @@
 
 .responsive-button {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  
+  transition: 1s ease;
+  
 }
-
+.responsive-button :hover{
+  font-size: 28px;
+}
+#butt{
+  font-size: 25px;
+  height: 50px; 
+}
 @media (max-width: 576px) {
   .responsive-button {
     font-size: 16px; 
+
   }
 }
 
@@ -123,17 +133,11 @@
 .bottom-grid {
   position: absolute;
   bottom: -230px;
-  width: 100%;
+  width: 101%;
   height: 100px;
   background-color: #c2c2c299;
 } 
-.horizontal-line {
-  width: 1400px; /* Adjust the width of the line as needed */
-  height: 1px; /* Adjust the height of the line as needed */
-  background-color: #000; /* Adjust the color of the line */
-  margin: 10px 0; /* Adjust the margin as needed */
-  margin-left: 35%;
-}
+
 .Tunisian_Flag{
   width: 10%;
   float: right;

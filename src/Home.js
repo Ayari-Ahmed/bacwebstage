@@ -8,12 +8,10 @@ import Tun from "./assets/tun.png";
 import "./Home.css";
 import {
   Accordion,
-  Rating,
   Grid,
   Group,
   Avatar,
   Text,
-  GridCol,
   Button,
 } from "@mantine/core";
 import { BrowserRouter as Router, Link, Route} from "react-router-dom";
@@ -116,12 +114,12 @@ function Home() {
             <div id="myDiv6">
               <Group justify="center">
               <Link to="/print-topics">
-                  <Button color="cyan" className="responsive-button">
+                  <Button color="cyan" className="responsive-button" id="butt">
                     المواضيع الجاهزة للطباعة
                   </Button>
                   </Link>
-                  <Link to="/bac-topics">
-                  <Button color="pink" className="responsive-button">
+                  <Link to="/Sections">
+                  <Button color="pink" className="responsive-button" id="butt">
                     مواضيع البكالوريا واصلاحها
                   </Button>
               </Link>
@@ -136,9 +134,9 @@ function Home() {
         </Grid.Col>
       </Grid>
 
-      <Grid className="bottom-grid">
+      <Grid className="bottom-grid" >
         <Grid.Col span={4}>
-          <div className="horizontal-line" />
+          
           <div>
             <br />
             <img src={Tun} alt="Tunisian Flag" className="Tunisian_Flag" />
