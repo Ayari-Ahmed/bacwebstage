@@ -13,7 +13,7 @@ export default function Informatique() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3001/api/getSubjects"
+          "http://localhost:3001/api/getSubjects/Informatique"
         );
         setSubjects(response.data);
         console.log(response.data);
@@ -45,7 +45,7 @@ export default function Informatique() {
             </div>
           </Grid.Col>
         </Grid>
-        <h2>Section : Informatique</h2>
+        {subjects.length > 0 && <h2>Section: {subjects[0].section}</h2>}
         <Grid
           justify="center"
           align="center"
@@ -56,7 +56,10 @@ export default function Informatique() {
               <Link>
                 <div>
                   {subject.matiere}
-                  <img src={subject.logo_matiere} alt={"Logo : "+ subject.matiere} />
+                  <img
+                    src={subject.logo_matiere}
+                    alt={"Logo : " + subject.matiere}
+                  />
                 </div>
               </Link>
             </Grid.Col>
