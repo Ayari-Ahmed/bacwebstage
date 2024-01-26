@@ -14,8 +14,9 @@ import Economie_gestion from "./components/Matiere/Economie_gestion";
 import Informatique from "./components/Matiere/Informatique";
 import Lettres from "./components/Matiere/Lettres";
 import Sport from "./components/Matiere/Sport";
-import { Dashboard } from "./components/Dashboard";
-
+import DashBoard from "./components/DashBoard";
+import CreateSection from "./components/CreateSection";
+import UpdateSection from "./components/UpdateSection";
 const App = () => {
   return (
     <MantineProvider>
@@ -34,7 +35,9 @@ const App = () => {
           <Route path="/Lettres" element={<Lettres />} />
           <Route path="/Informatique" element={<Informatique />} />
           <Route path="/Sport" element={<Sport />} />
-          <Route path="/DashBoard" element={<Dashboard/>} />
+          <Route path="/DashBoard" element={<DashBoard />} />
+          <Route path="/create" element={<CreateSection />} />
+          <Route path="DashBoard/update/:id" element={<UpdateSection />} />
         </Routes>
       </Router>
     </MantineProvider>
