@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Home";
-import Topics from "./pages/bac-topics";
+import Topics from "./components/bac-topics";
 import Print from "./pages/print-topics";
 import Login from "./components/Login";
 import Recherche from "./components/Recherche";
@@ -14,6 +14,7 @@ import Economie_gestion from "./components/Matiere/Economie_gestion";
 import Informatique from "./components/Matiere/Informatique";
 import Lettres from "./components/Matiere/Lettres";
 import Sport from "./components/Matiere/Sport";
+import { Dashboard } from "./components/Dashboard";
 
 const App = () => {
   return (
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/Lettres" element={<Lettres />} />
           <Route path="/Informatique" element={<Informatique />} />
           <Route path="/Sport" element={<Sport />} />
+          <Route path="/DashBoard" element={<Dashboard/>} />
         </Routes>
       </Router>
     </MantineProvider>

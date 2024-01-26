@@ -89,3 +89,15 @@
   bottom: -400px;
   
 }
+.Matieres{
+  width: 80%;
+  border-radius: 40px;
+  background-color: #9ade952c;
+  border: 1px solid rgb(136, 135, 135);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5), -5px -5px 15px rgba(255, 255, 255, 0.5);
+  transition: padding 0.4s ease, background-color 0.5s ease;
+}
+.Matieres:hover {
+  background-color: #70cdd744;
+  padding: 20px;
+}

@@ -10,7 +10,7 @@ import Logo1 from "../assets/logo1.png";
 import Logo2 from "../assets/logo2.png";
 import Logo8 from "../assets/logo8.png";
 import { comment } from "postcss";
-
+import Tun from "../assets/tun.png";
 
 
 
@@ -306,6 +306,31 @@ const Recherche = () => {
           <Table.Tbody>{rows}</Table.Tbody>
         </Table>
       </div>
+      <Grid className="bottom-grid" >
+        <Grid.Col span={4}>
+          
+          <div>
+            <br />
+            <img src={Tun} alt="Tunisian Flag" className="Tunisian_Flag" />
+          </div>
+        </Grid.Col>
+        <Grid.Col span={4}>
+          <div>
+            <br />
+            <br />
+            <p id="text-footer">
+              المركز الوطني للتكنولوجيات في التربية : جميع الحقوق محفوظة
+              1994-2023
+            </p>
+          </div>
+        </Grid.Col>
+        <Grid.Col span={4}>
+          <div>
+            <img src={Logo1} alt="Logo1" className="L_Footer" />
+          </div>
+        </Grid.Col>
+      </Grid>
+
     </>
   );
 };

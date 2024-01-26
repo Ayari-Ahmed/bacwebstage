@@ -18,7 +18,7 @@ import { BrowserRouter as Router, Link, Route} from "react-router-dom";
 
 import { Container, Row, Col } from "react-bootstrap";
 import PrintTopics from "./pages/print-topics"; 
-import BacTopics from "./pages/bac-topics";
+import BacTopics from "./components/bac-topics";
 
 
 function AccordionLabel({ label, image, description }) {
@@ -68,7 +68,7 @@ function Home() {
 
   return (
     <>
-      <Grid>
+      <Grid className="Grid">
         <Grid.Col span={4}>
           <div>
             <img src={Logo1} alt="Logo1" id="Logo1" />
