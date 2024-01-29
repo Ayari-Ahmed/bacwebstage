@@ -20,7 +20,6 @@
     
 }
 .Table_Header{
-    width: 50%;
     text-align: center !important;
 }
 .Table_Header:hover{
@@ -82,4 +81,7 @@
   }
   .Grid{
     width: 99.65%;
+}
+#Footer_Recherche{
+  position: relative;
 }

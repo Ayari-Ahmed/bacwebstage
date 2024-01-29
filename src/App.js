@@ -15,8 +15,10 @@ import Informatique from "./components/Matiere/Informatique";
 import Lettres from "./components/Matiere/Lettres";
 import Sport from "./components/Matiere/Sport";
 import DashBoard from "./components/DashBoard";
+import DashBoard_Sections from "./components/DashBoardSections";
 import CreateSection from "./components/CreateSection";
 import UpdateSection from "./components/UpdateSection";
+import DashBoardMatieres from "./components/DashBoardMatieres";
 const App = () => {
   return (
     <MantineProvider>
@@ -35,9 +37,14 @@ const App = () => {
           <Route path="/Lettres" element={<Lettres />} />
           <Route path="/Informatique" element={<Informatique />} />
           <Route path="/Sport" element={<Sport />} />
+          <Route path="/DashBoard/Sections" element={<DashBoard_Sections />} />
+          <Route path="/DashBoard/Matieres" element={<DashBoardMatieres />} />
           <Route path="/DashBoard" element={<DashBoard />} />
-          <Route path="/create" element={<CreateSection />} />
-          <Route path="DashBoard/update/:id" element={<UpdateSection />} />
+          <Route
+            path="DashBoard/Sections/update/:id"
+            element={<UpdateSection />}
+          />
+          <Route path="/create_Section" element={<CreateSection />} />
         </Routes>
       </Router>
     </MantineProvider>

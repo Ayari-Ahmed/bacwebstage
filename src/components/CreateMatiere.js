@@ -2,18 +2,22 @@ import React, { useState } from "react";
 import { useForm } from "@mantine/form";
 import { TextInput, Button, Box, Code } from "@mantine/core";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
-function UpdateSection() {
+import { useNavigate } from "react-router-dom";
+
+function CreateMatiere() {
   const [sectionName, setSectionName] = useState("");
   const [image_url, setImage_url] = useState("");
   const [link, setLink] = useState("");
   const navigate = useNavigate();
-  const {id} = useParams();
 
   function handleSubmit(event) {
     event.preventDefault();
     axios
-      .put("http://localhost:3001/update/"+ id , {sectionName, image_url, link })
+      .post("http://localhost:3001/create_Section", {
+        sectionName,
+        image_url,
+        link,
+      })
       .then((res) => {
         console.log(res);
         navigate("/DashBoard/Sections");
@@ -22,7 +26,7 @@ function UpdateSection() {
   return (
     <Box maw={340} mx="auto">
       <form onSubmit={handleSubmit}>
-          <h1>Update Section</h1>
+        <h1>ADD Matiere</h1>
         <TextInput
           label="Section Name"
           placeholder="Section Name"
@@ -41,11 +45,11 @@ function UpdateSection() {
           onChange={(e) => setLink(e.target.value)}
         />
         <Button type="submit" mt="md">
-          Update
+          ADD
         </Button>
       </form>
     </Box>
   );
 }
 
-export default UpdateSection;
+export default CreateMatiere;

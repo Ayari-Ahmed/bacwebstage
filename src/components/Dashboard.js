@@ -1,53 +1,59 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import React from "react";
+import DashBoard_Sections from "./DashBoardSections";
 import "./DashBoard.css";
+import NavbarSimple from "./NavbarSimple";
+import { Grid } from "@mantine/core";
+import Logo1 from "../assets/logo1.png";
+import Tun from "../assets/tun.png";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./Login";
+import Databases from "./Sections";
+import Sections from "./Sections";
+import Matieres from "./Recherche";
+import OtherSettings from "./Sections";
 
-function DashBoard() {
-  const [section, setSection] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:3001/api/getSections")
-      .then((res) => setSection(res.data))
-      .catch((err) => console.log(err));
-  }, []);
-
+import { MantineProvider } from "@mantine/core";
+export default function DashBoard() {
   return (
     <>
-      <div className="d-flex vh-100 bg-primary justify-content-center align-items-center">
-        <div className="w-50 bg-white rounded">
-          <Link to="/create" className="btn btn-success">
-            Add +
-          </Link>
-          <br />
-          <table>
-            <thead>
-              <tr>
-                <th>Section Name</th>
-                <th>Image URL</th>
-                <th>Lien</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {section.map((data) => (
-                <tr key={data.section_id}>
-                  <td>{data.section_name}</td>
-                  <td>{data.image_url}</td>
-                  <td>{data.link}</td>
-                  <td>
-                    <Link to={`update/${data.id}`} className="btn btn-primary">Update</Link>
-                    <button className="btn btn-danger">Delete</button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <Grid>
+        <Grid.Col span={4}>
+          <div id="Nav_Bar">
+            <NavbarSimple />
+          </div>
+        </Grid.Col>
+        <Grid.Col span={4}>
+          <div id="Boodyy">
+
+          </div>
+        </Grid.Col>
+        <Grid.Col span={4}>
+          <div></div>
+        </Grid.Col>
+      </Grid>
+      <Grid className="bottom-grid" id="Fo">
+        <Grid.Col span={4}>
+          <div>
+            <br />
+            <img src={Tun} alt="Tunisian Flag" className="Tunisian_Flag" />
+          </div>
+        </Grid.Col>
+        <Grid.Col span={4}>
+          <div>
+            <br />
+            <br />
+            <p id="text-footer">
+              المركز الوطني للتكنولوجيات في التربية : جميع الحقوق محفوظة
+              1994-2023
+            </p>
+          </div>
+        </Grid.Col>
+        <Grid.Col span={4}>
+          <div>
+            <img src={Logo1} alt="Logo1" className="L_Footer" />
+          </div>
+        </Grid.Col>
+      </Grid>
     </>
   );
 }
-
-export default DashBoard;

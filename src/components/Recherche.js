@@ -306,7 +306,7 @@ const Recherche = () => {
           <Table.Tbody>{rows}</Table.Tbody>
         </Table>
       </div>
-      <Grid className="bottom-grid" >
+      <Grid className="bottom-grid" id="Footer_Recherche">
         <Grid.Col span={4}>
           
           <div>
