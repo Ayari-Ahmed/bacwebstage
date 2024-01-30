@@ -3,11 +3,7 @@ import "./DashBoard.css";
 import { Grid } from "@mantine/core";
 import Logo1 from "../assets/logo1.png";
 import Tun from "../assets/tun.png";
-import {
-  BrowserRouter as Router,
-  Link,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Link, useLocation } from "react-router-dom";
 import {
   IconHome,
   IconDatabaseImport,
@@ -38,56 +34,67 @@ export default function DashBoard() {
                 <div className={classes.header}>
                   <img src={Logo1} alt="Logo1" className={classes.Logo1} />
                 </div>
-                <button
-                  className={classes.link}
-                  data-active={active === "Home" || undefined}
-                  onClick={() => setActive("Home")}
-                >
-                  <IconHome className={classes.linkIcon} stroke={1.5} />
-                  <span>Home</span>
-                </button>
-                <Link
-                  className={classes.link}
-                  data-active={active === "Databases" || undefined}
-                  onClick={() => {
-                    setActive("Databases");
-
-                    handleLinkClick(
-                      "http://localhost/phpmyadmin/index.php"
-                    );
-                  }}
-                >
-                  <IconDatabaseImport
-                    className={classes.linkIcon}
-                    stroke={1.5}
-                  />
-                  <span>Databases</span>
-                </Link>
-                <Link
-                  className={classes.link}
-                  data-active={active === "Sections" || undefined}
-                  onClick={() => {
-                    setActive("Sections");
-                    handleLinkClick("/DashBoard/Sections");
-                  }}
-                >
-                  <IconBoxMultiple className={classes.linkIcon} stroke={1.5} />
-                  <span>Sections</span>
-                </Link>
-                <Link
-                  className={classes.link}
-                  data-active={active === "Matieres" || undefined}
-                  onClick={() => {
-                    setActive("Matieres");
-                    handleLinkClick("/DashBoard/Matieres");
-                  }}
-                >
-                  <IconClipboardData
-                    className={classes.linkIcon}
-                    stroke={1.5}
-                  />
-                  <span>Matières</span>
-                </Link>
+                <ul>
+                  <li>
+                    <button
+                      className={classes.link}
+                      data-active={active === "Home" || undefined}
+                      onClick={() => {
+                        setActive("Home");
+                        handleLinkClick("/");
+                      }}
+                    >
+                      <IconHome className={classes.linkIcon} stroke={1.5} />
+                      <span>Home</span>
+                    </button>
+                  </li>
+                  <li>
+                    <Link
+                      className={classes.link}
+                      
+                    >
+                      <IconDatabaseImport
+                        className={classes.linkIcon}
+                        stroke={1.5}
+                      />
+                      <span>Databases</span>
+                    </Link>
+                    <ul>
+                      <li>
+                        <Link
+                          className={classes.link}
+                          data-active={active === "Sections" || undefined}
+                          onClick={() => {
+                            setActive("Sections");
+                            handleLinkClick("/DashBoard/Sections");
+                          }}
+                        >
+                          <IconBoxMultiple
+                            className={classes.linkIcon}
+                            stroke={1.5}
+                          />
+                          <span>Sections</span>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          className={classes.link}
+                          data-active={active === "Matieres" || undefined}
+                          onClick={() => {
+                            setActive("Matieres");
+                            handleLinkClick("/DashBoard/Matieres");
+                          }}
+                        >
+                          <IconClipboardData
+                            className={classes.linkIcon}
+                            stroke={1.5}
+                          />
+                          <span>Matières</span>
+                        </Link>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
 
               <div className={classes.footer}>
