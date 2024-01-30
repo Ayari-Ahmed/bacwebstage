@@ -3,6 +3,7 @@ import { Table, Input } from "@mantine/core";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Logo8 from "../assets/logo8.png";
+import { IconDatabaseImport } from "@tabler/icons-react";
 
 function Test() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,7 +20,7 @@ function Test() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3001/delete/${id}`);
+      await axios.delete(`http://localhost:3001/delete_matiere/${id}`);
       window.location.reload();
     } catch (err) {
       console.log(err);
@@ -67,8 +68,9 @@ function Test() {
       <Table.Td>{element.id}</Table.Td>
       <Table.Td>{element.section}</Table.Td>
       <Table.Td>{element.matiere}</Table.Td>
+      <Table.Td><img src={element.logo_matiere} alt={element.matiere}></img></Table.Td>
       <Table.Td>
-        <Link to={`update/${element.id}`} className="btn btn-primary">
+        <Link to={`update_matiere/${element.id}`} className="btn btn-primary">
           Update
         </Link>
         <button
@@ -83,6 +85,10 @@ function Test() {
 
   return (
     <>
+    <h1><IconDatabaseImport  stroke={2} /> DashBoard Matiéres  </h1>
+      <Link to="/create_Matiere" className="btn btn-success">
+        Add +
+      </Link>
       <div className="myDiv1">
         <div>
           <img src={Logo8} alt="Logo2" id="Logo8" />
@@ -117,12 +123,19 @@ function Test() {
               >
                 Matière
               </Table.Th>
+              <Table.Th>
+                Logo Matiére
+              </Table.Th>
+
               <Table.Th>Update / Delete</Table.Th>
             </Table.Tr>
           </Table.Thead>
           <Table.Tbody>{rows}</Table.Tbody>
         </Table>
       </div>
+      
+      <div><br/>
+      <br/>.</div>
     </>
   );
 }

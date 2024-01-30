@@ -6,9 +6,7 @@
     height: 100vh;
   }
   
-  .bg-primary {
-    background-color: #81aedda4; /* You can customize the color */
-  }
+
   
   .justify-content-center {
     justify-content: center;
@@ -23,7 +21,8 @@
   }
   
   .bg-white {
-    background-color: rgba(255, 255, 255, 0.49); /* You can customize the color */
+    background-color: rgba(222, 222, 222, 0.789);
+    box-shadow: 0 .4rem .8rem #0005;
   }
   
   .rounded {
@@ -84,4 +83,25 @@ font-size: 18px !important;
 }
 Link{
   text-decoration: none ;
+}
+
+#Table_Log{
+  float: left;
+}
+#Table_Mat{
+  background-color: #e2e2e27a;
+  box-shadow: 0 .4rem .8rem #0005;
+  border-radius: .8rem;
+  overflow: hidden;
+  width: 300%;
+  float: left;
+}
+#T_Head_Mat{
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #d0d0d0;
+}
+.T_Body_Mat{
+  font-size: 18px;
+  text-align: left;
 }

@@ -1,28 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "@mantine/form";
-import { TextInput, Button, Box, Code, Grid, Table } from "@mantine/core";
+import { TextInput, Button, Box, Code, Grid } from "@mantine/core";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-function CreateMatiere() {
+function UpdateMatiere() {
   const [matiere, setMatiereName] = useState("");
   const [section, setSectionName] = useState("");
   const [logo_matiere, setLogoMatiere] = useState("");
   const navigate = useNavigate();
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    axios
-      .post("http://localhost:3001/create_Matiere", {
-        matiere,
-        section,
-        logo_matiere,
-      })
-      .then((res) => {
-        console.log(res);
-        navigate("/DashBoard/Matieres");
-      });
-  }
+  const { id } = useParams();
 
   const [data, setData] = useState([]);
 
@@ -43,12 +30,26 @@ function CreateMatiere() {
     </tr>
   ));
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    axios
+      .put("http://localhost:3001/update_matiere/" + id, {
+        matiere,
+        section,
+        logo_matiere,
+      })
+      .then((res) => {
+        console.log(res);
+        navigate("/DashBoard/Matieres");
+      });
+  }
+
   return (
     <Grid>
       <Grid.Col span={3}>
         <Box maw={340} mx="auto">
           <form onSubmit={handleSubmit}>
-            <h1>ADD Matiére</h1>
+            <h1>Update matiere</h1>
             <TextInput
               label="Matiére Name"
               placeholder="Matiére Name"
@@ -67,7 +68,7 @@ function CreateMatiere() {
               onChange={(e) => setLogoMatiere(e.target.value)}
             />
             <Button type="submit" mt="md">
-              ADD Matiére
+              Update matiere
             </Button>
           </form>
         </Box>
@@ -90,4 +91,4 @@ function CreateMatiere() {
   );
 }
 
-export default CreateMatiere;
+export default UpdateMatiere;

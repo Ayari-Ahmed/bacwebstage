@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./DashBoard_Sections.css";
-
+import { IconDatabaseImport } from "@tabler/icons-react";
 function DashBoardSections() {
   const [section, setSection] = useState([]);
 
@@ -24,6 +24,7 @@ function DashBoardSections() {
 
   return (
     <>
+      <h1><IconDatabaseImport  stroke={2} /> DashBoard Sections </h1>
       <div className="d-flex vh-100 bg-primary justify-content-center align-items-center">
         <div className="w-50 bg-white rounded">
           <Link to="/create_Section" className="btn btn-success">

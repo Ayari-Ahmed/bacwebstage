@@ -271,7 +271,6 @@ const Recherche = () => {
           </div>
         </Grid.Col>
       </Grid>
-
       <div className="myDiv1">
         <div>
           <img src={Logo8} alt="Logo2" id="Logo8" />

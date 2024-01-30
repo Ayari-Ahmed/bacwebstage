@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo1 from "../assets/logo1.png";
-import { IconHome, IconDatabaseImport, IconBoxMultiple, IconClipboardData, IconSettings, IconLogout } from "@tabler/icons-react";
+import {
+  IconHome,
+  IconDatabaseImport,
+  IconBoxMultiple,
+  IconClipboardData,
+  IconSettings,
+  IconLogout,
+} from "@tabler/icons-react";
 import classes from "./NavbarSimple.module.css";
-import Home from './Login';
-import Databases from './Sections';
-import Sections from './Sections';
-import Matieres from './Recherche';
-import OtherSettings from './Sections';
+import Home from "./Login";
+import Databases from "./Sections";
+import Sections from "./Sections";
+import Matieres from "./Recherche";
+import OtherSettings from "./Sections";
 
 function NavbarSimple() {
   const [active, setActive] = useState("Home");
@@ -27,38 +34,33 @@ function NavbarSimple() {
             <IconHome className={classes.linkIcon} stroke={1.5} />
             <span>Home</span>
           </button>
-          <button
+          <Link
             className={classes.link}
             data-active={active === "Databases" || undefined}
             onClick={() => setActive("Databases")}
           >
             <IconDatabaseImport className={classes.linkIcon} stroke={1.5} />
             <span>Databases</span>
-          </button>
-          <button
+          </Link>
+          <Link
+            to={"Sections"}
             className={classes.link}
             data-active={active === "Sections" || undefined}
             onClick={() => setActive("Sections")}
           >
             <IconBoxMultiple className={classes.linkIcon} stroke={1.5} />
             <span>Sections</span>
-          </button>
-          <button
+          </Link>
+          <Link 
+          to={"Matieres"}
             className={classes.link}
             data-active={active === "Matieres" || undefined}
             onClick={() => setActive("Matieres")}
           >
             <IconClipboardData className={classes.linkIcon} stroke={1.5} />
             <span>Matières</span>
-          </button>
-          <button
-            className={classes.link}
-            data-active={active === "Other Settings" || undefined}
-            onClick={() => setActive("Other Settings")}
-          >
-            <IconSettings className={classes.linkIcon} stroke={1.5} />
-            <span>Other Settings</span>
-          </button>
+          </Link>
+          
         </div>
 
         <div className={classes.footer}>
@@ -71,8 +73,7 @@ function NavbarSimple() {
         </div>
       </nav>
 
-      <div id="Nav_Bar">
-      </div>
+      <div id="Nav_Bar"></div>
     </div>
   );
 }

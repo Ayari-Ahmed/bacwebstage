@@ -19,6 +19,10 @@ import DashBoard_Sections from "./components/DashBoardSections";
 import CreateSection from "./components/CreateSection";
 import UpdateSection from "./components/UpdateSection";
 import DashBoardMatieres from "./components/DashBoardMatieres";
+import CreateMatiere from "./components/CreateMatiere";
+import UpdateMatiere from "./components/UpdateMatiere";
+import Test from "./components/Test";
+import MyIframeComponent from "./components/MyIframeComponent";
 const App = () => {
   return (
     <MantineProvider>
@@ -44,7 +48,14 @@ const App = () => {
             path="DashBoard/Sections/update/:id"
             element={<UpdateSection />}
           />
+          <Route
+            path="DashBoard/Matieres/update_matiere/:id"
+            element={<UpdateMatiere />}
+          />
           <Route path="/create_Section" element={<CreateSection />} />
+          <Route path="/create_Matiere" element={<CreateMatiere />} />
+          <Route path="/test" element={<Test />} />
+          <Route path="/MyIframeComponent" element={<MyIframeComponent />} />
         </Routes>
       </Router>
     </MantineProvider>
