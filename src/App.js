@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Home";
-import Topics from "./components/bac-topics";
+import BacTopics from "./components/BacTopics";
 import Print from "./pages/print-topics";
 import Login from "./components/Login";
 import Recherche from "./components/Recherche";
@@ -30,7 +30,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} index />
           <Route path="/recherche" element={<Recherche />} />
-          <Route path="/bac-topics" element={<Topics />} />
+
           <Route path="/print-topics" element={<Print />} />
           <Route path="/sections" element={<Sections />} />
           <Route path="/login" element={<Login />} />
@@ -41,6 +41,13 @@ const App = () => {
           <Route path="/Lettres" element={<Lettres />} />
           <Route path="/Informatique" element={<Informatique />} />
           <Route path="/Sport" element={<Sport />} />
+          <Route path="/Mathématiques/*" element={<BacTopics />} />
+          <Route path="/Sciences Expérimentales/*" element={<BacTopics />} />
+          <Route path="/Économie et gestion/*" element={<BacTopics />} />
+          <Route path="/Technique/*" element={<BacTopics />} />
+          <Route path="/Lettres/*" element={<BacTopics />} />
+          <Route path="/Sport/*" element={<BacTopics />} />
+          <Route path="/Informatique/*" element={<BacTopics />} />
           <Route path="/DashBoard/Sections" element={<DashBoard_Sections />} />
           <Route path="/DashBoard/Matieres" element={<DashBoardMatieres />} />
           <Route path="/DashBoard" element={<DashBoard />} />

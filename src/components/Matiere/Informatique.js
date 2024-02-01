@@ -56,7 +56,7 @@ export default function Informatique() {
             <Grid.Col key={index} span={3}>
               <Link
                 className="Lien"
-                to={"/" + subject.section + "_" + subject.matiere}
+                to={"/" + subject.section + "/" + subject.matiere}
               >
                 <div className="Matieres">
                   <img

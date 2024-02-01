@@ -18,7 +18,7 @@ import { BrowserRouter as Router, Link, Route} from "react-router-dom";
 
 import { Container, Row, Col } from "react-bootstrap";
 import PrintTopics from "./pages/print-topics"; 
-import BacTopics from "./components/bac-topics";
+import BacTopics from "./components/BacTopics";
 
 
 function AccordionLabel({ label, image, description }) {

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Logo8 from "../assets/logo8.png";
 import { IconDatabaseImport } from "@tabler/icons-react";
-
+import "./DashBoard_Sections.css"
 function Test() {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortedField, setSortedField] = useState(null);
@@ -64,7 +64,7 @@ function Test() {
     : filteredData;
 
   const rows = sortedData.map((element) => (
-    <Table.Tr key={element.id} className="row">
+    <Table.Tr key={element.id} id="row1">
       <Table.Td>{element.id}</Table.Td>
       <Table.Td>{element.section}</Table.Td>
       <Table.Td>{element.matiere}</Table.Td>

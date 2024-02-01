@@ -1,3 +1,40 @@
-.Grid{
-    width: 99%;
+#Topic_Table{
+    border-radius: 20px;
+    background-color: antiquewhite;
+    box-shadow: 0 .4rem .8rem #0005;
+    width: 100%;
+    font-size: 20px; 
+    margin-bottom: 10%;
+    
+}
+
+thead{
+    background-color: #f2f2f2;
+    font-size: 26px;
+    font-family: 'Georgia', serif;
+    font-weight: normal;
+    background-color: rgba(240, 248, 255, 0.478);
+    color: #25744d;
+  }
+  .disponible{
+      color: #25744d;
+  }
+  .non_disponible{
+    color: #ba2222;
+    
+}
+td{
+    padding: 15px;
+    width: 10%;
+}
+tr:hover{
+    background-color: rgba(243, 243, 243, 0.833);
+    
+}
+#footer_Topics{
+    position: relative;
+    top: 0px;
+}
+.but_Topics:hover{
+    padding: 15px;
 }
