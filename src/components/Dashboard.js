@@ -45,13 +45,6 @@ export default function DashBoard() {
                   <IconHome className={classes.linkIcon} stroke={1.5} />
                   <span>Home</span>
                 </button>
-                <Link className={classes.link}>
-                  <IconDatabaseImport
-                    className={classes.linkIcon}
-                    stroke={1.5}
-                  />
-                  <span>Databases</span>
-                </Link>
                 <Link
                   className={classes.link}
                   data-active={active === "Sections" || undefined}

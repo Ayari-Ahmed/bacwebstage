@@ -33,6 +33,7 @@
   }
   
   .btn-success {
+    
     color: #fff;
     background-color: #28a745;
     border-color: #28a745;
@@ -71,7 +72,7 @@
   align-items: center;
 }
 .Dash_Mat_Tab{
-  background-color: #dfe8f2ad;
+    
   border-radius: 20px;
   backdrop-filter: blur(7px);
     box-shadow: 0 .4rem .8rem #0005;
@@ -110,4 +111,8 @@ Link{
 .T_Body_Mat{
   font-size: 18px;
   text-align: left;
+}
+
+#ll{
+  height: 50%
 }

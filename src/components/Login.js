@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./DashBoard.css";
+import {
+  MDBContainer,
+  MDBCol,
+  MDBRow,
+  MDBBtn,
+  MDBIcon,
+  MDBInput,
+  MDBCheckbox,
+} from "mdb-react-ui-kit";
+import "./log.css";
+
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -31,44 +39,62 @@ const Login = () => {
   }
 
   return (
-    <div id="Login_Box">
+    <div className="cont_log">
       <form onSubmit={handleSubmit}>
-        <h1>Login Admin </h1>
-        <br />
-        <table className="Table_Log">
-          <tr >
-            <td>
-              <h2>Username :</h2>
-            </td>
-            <td>
-              <input
-                type="text"
-                id="username"
-                placeholder="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+        <MDBContainer fluid className="p-3 my-5">
+          <MDBRow>
+            <MDBCol col="10" md="6">
+              <img
+                src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                className="img-fluid"
+                alt="Phone image"
               />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <h2>Password :</h2>
-            </td>
-            <td>
-              <input
-                type="password"
-                id="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </td>
-          </tr>
-          <div></div>
-          <div></div>
-        </table>
-        {error && <div style={{ color: "red" }}>{error}</div>}
-        <Button type="submit" variant="outline-success">Login</Button>
+            </MDBCol>
+            <MDBCol col="4" md="6">
+              <div className="login_div">
+                <h1>Login Admin</h1>
+                <br />
+                <h2 className="left">User Name :</h2>
+                <MDBInput
+                  wrapperClass="mb-4"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  id="formControlLg"
+                  type="text"
+                  size="lg"
+                />
+                <h2 className="left">Password :</h2>
+                <MDBInput
+                  wrapperClass="mb-4"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  id="formControlLg"
+                  type="password"
+                  size="lg"
+                />
+                <div className="d-flex justify-content-between mx-4 mb-4">
+                  <MDBCheckbox
+                    name="flexCheck"
+                    value=""
+                    id="flexCheckDefault"
+                    label="Remember me"
+                  />
+                  
+                </div>
+                <MDBBtn
+                  type="button"
+                  className="mb-4 w-100"
+                  id="b"
+                  size="lg"
+                  onClick={handleSubmit}
+                >
+                  Sign in
+                </MDBBtn>
+                {error && <div style={{ color: "red" }}>{error}</div>}
+              </div>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
       </form>
     </div>
   );

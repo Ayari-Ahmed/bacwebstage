@@ -23,6 +23,8 @@ import CreateMatiere from "./components/CreateMatiere";
 import UpdateMatiere from "./components/UpdateMatiere";
 import Test from "./components/Test";
 import MyIframeComponent from "./components/MyIframeComponent";
+
+
 const App = () => {
   return (
     <MantineProvider>
@@ -30,7 +32,6 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} index />
           <Route path="/recherche" element={<Recherche />} />
-
           <Route path="/print-topics" element={<Print />} />
           <Route path="/sections" element={<Sections />} />
           <Route path="/login" element={<Login />} />

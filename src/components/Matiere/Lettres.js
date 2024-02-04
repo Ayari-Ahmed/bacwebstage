@@ -47,7 +47,13 @@ export default function Informatique() {
             </div>
           </Grid.Col>
         </Grid>
-        {subjects.length > 0 && <h2>Section: {subjects[0].section}</h2>}
+        {subjects.length > 0 && (
+          <h1>
+            {" "}
+            <span className="Cont_tit" style={{ textTransform: 'uppercase'}}>Section :</span>{" "}
+            <span className="cont" style={{ textTransform: 'uppercase'}}> {subjects[0].section}</span>
+          </h1>
+        )}
         <Grid
           justify="center"
           align="center"

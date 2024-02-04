@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Logo1 from "../assets/logo1.png";
 import Logo2 from "../assets/logo2.png";
-import { Grid, GridCol } from "@mantine/core";
+import { Grid } from "@mantine/core";
 import "./bac-topics.css";
 import { useLocation } from "react-router-dom";
 import Tun from "../assets/tun.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
+
 function BacTopics() {
   const navigate = useNavigate();
   const location = useLocation();
+
   const path = decodeURIComponent(
     location.pathname.split("/").join("-").slice(1)
   );
+  const [section, matiere] = path.split("-");
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
@@ -44,7 +47,12 @@ function BacTopics() {
       <Grid>
         <Grid.Col span="auto"></Grid.Col>
         <Grid.Col span={6}>
-          <h1>{path}</h1>
+          
+          <div class="banner">
+          <h1 > <span className="Cont_tit">Section :</span> <span className="cont"> {section} </span></h1>
+            <h1 > <span className="Cont_tit">Matiere :</span><span className="cont"> {matiere} </span></h1>
+            
+          </div>
           <table id="Topic_Table">
             <thead>
               <tr>
@@ -84,40 +92,77 @@ function BacTopics() {
                           />
                         );
                       } catch (error) {
-                        
                         return (
                           <span className="non_disponible">Non disponible</span>
                         );
                       }
                     })()}
-                    <div></div>
                   </td>
                   <td>
-                    <span
-                      className={
-                        topic.corrige_P === "yes"
-                          ? "disponible"
-                          : "non_disponible"
+                    {(() => {
+                      try {
+                        const pdfUrl = require(`./Topics/${path}_P_${topic.topicYear}_Corrigé.pdf`);
+                        return (
+                          <img
+                            className="but_Topics"
+                            src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/00bfa6/external-pdf-file-online-learning-flatart-icons-outline-flatarticons.png"
+                            alt="logo_PDF"
+                            onClick={() => {
+                              window.open(pdfUrl, "_blank");
+                            }}
+                          />
+                        );
+                      } catch (error) {
+                        return (
+                          <span className="non_disponible">Non disponible</span>
+                        );
                       }
-                    >
-                      {topic.corrige_P === "yes"
-                        ? "Disponible"
-                        : "Non disponible"}
-                    </span>
+                    })()}
                   </td>
-                  <td>{path + "_C_" + topic.topicYear}</td>
+
+
+
                   <td>
-                    <span
-                      className={
-                        topic.corrige_C === "yes"
-                          ? "disponible"
-                          : "non_disponible"
+                    {(() => {
+                      try {
+                        const pdfUrl = require(`./Topics/${path}_C_${topic.topicYear}.pdf`);
+                        return (
+                          <img
+                            className="but_Topics"
+                            src="https://img.icons8.com/external-prettycons-lineal-prettycons/49/00bfa6/external-file-file-types-prettycons-lineal-prettycons.png"
+                            alt="logo_PDF"
+                            onClick={() => {
+                              window.open(pdfUrl, "_blank");
+                            }}
+                          />
+                        );
+                      } catch (error) {
+                        return (
+                          <span className="non_disponible">Non disponible</span>
+                        );
                       }
-                    >
-                      {topic.corrige_C === "yes"
-                        ? "Disponible"
-                        : "Non Disponible"}
-                    </span>
+                    })()}
+                  </td>
+                  <td>
+                    {(() => {
+                      try {
+                        const pdfUrl = require(`./Topics/${path}_C_${topic.topicYear}_Corrigé.pdf`);
+                        return (
+                          <img
+                            className="but_Topics"
+                            src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/00bfa6/external-pdf-file-online-learning-flatart-icons-outline-flatarticons.png"
+                            alt="logo_PDF"
+                            onClick={() => {
+                              window.open(pdfUrl, "_blank");
+                            }}
+                          />
+                        );
+                      } catch (error) {
+                        return (
+                          <span className="non_disponible">Non disponible</span>
+                        );
+                      }
+                    })()}
                   </td>
                 </tr>
               ))}

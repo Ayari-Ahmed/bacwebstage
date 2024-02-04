@@ -23,11 +23,11 @@ thead{
     color: #ba2222;
     
 }
-td{
+#Topic_Table td{
     padding: 15px;
     width: 10%;
 }
-tr:hover{
+#Topic_Table tr:hover{
     background-color: rgba(243, 243, 243, 0.833);
     
 }
@@ -38,3 +38,25 @@ tr:hover{
 .but_Topics:hover{
     padding: 15px;
 }
+
+
+.banner {
+    background-color: rgba(228, 228, 228, 0.714);
+    box-shadow: 0 .4rem .8rem #0005;
+    text-align: left;
+    padding: 20px;
+    font-size: 2em;
+    border-radius: 30px;
+    text-transform: uppercase !important;
+  }
+  .cont{
+      color: #7b7a7a;
+      font-weight: bold;
+      
+  }
+  .Cont_tit{
+    
+  text-decoration: underline;
+  font-weight: bolder;
+  color: #1c5f3f;
+  }

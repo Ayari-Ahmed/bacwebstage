@@ -11,7 +11,7 @@ import Logo2 from "../assets/logo2.png";
 import Logo8 from "../assets/logo8.png";
 import { comment } from "postcss";
 import Tun from "../assets/tun.png";
-
+import { Link } from "react-router-dom";
 
 
 
@@ -244,10 +244,14 @@ const Recherche = () => {
     : filteredData;
 
   const rows = sortedData.map((element) => (
-    <Table.Tr key={element.id} className="row">
+    <Table.Tr key={element.id} className="rooww">
       
-      <Table.Td>{element.section}</Table.Td>
-      <Table.Td>{element.matiere}</Table.Td>
+      
+      <Table.Td><Link  className="Lienn" to={"/"+element.section}>{element.section}</Link></Table.Td>
+      
+      
+      <Table.Td><Link  className="Lienn" to={"/"+element.section+"/"+element.matiere}>{element.matiere}</Link></Table.Td>
+      
     </Table.Tr>
   ));
 
