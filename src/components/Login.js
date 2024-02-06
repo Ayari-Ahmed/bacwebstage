@@ -34,7 +34,7 @@ const Login = () => {
           "Login failed:",
           error.response?.data?.error || error.message
         );
-        setError("Invalid username or password. Please try again.");
+        setError("Invalid username or password . Please try again . ");
       });
   }
 
@@ -47,7 +47,7 @@ const Login = () => {
               <img
                 src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
                 className="img-fluid"
-                alt="Phone image"
+                alt="Phone_image"
               />
             </MDBCol>
             <MDBCol col="4" md="6">
@@ -79,7 +79,6 @@ const Login = () => {
                     id="flexCheckDefault"
                     label="Remember me"
                   />
-                  
                 </div>
                 <MDBBtn
                   type="button"
